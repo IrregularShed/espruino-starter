@@ -1,19 +1,26 @@
 {
   "name": "esprunio-starter",
   "version": "1.0.0",
-  "description": "starter repo to build and deploy modular and extended espurino code",
+  "description": "starter repo to build and deploy modular and extended Espruino code",
   "main": "build/espruino.js",
   "module": "app.js",
   "scripts": {
     "build": "node_modules/.bin/rollup -c",
-    "wipe": "espruino --port /dev/ttyUSB0 -b 115200 --no-ble --board ../boards/ESP32.json ./wipe.js",
-    "reset": "espruino --port /dev/ttyUSB0 -b 115200 --no-ble --board ../boards/ESP32.json ./reset.js",
-    "upload": "espruino --port /dev/ttyUSB0 -b 115200 --no-ble --board ../boards/ESP32.json ./build/espruino${npm_config_isdev}.js",
+    "wipe": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./wipe.js",
+    "reset": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./reset.js",
+    "upload": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./build/espruino.dev.js",
     "dev": "npm run build && npm run wipe && npm run upload --isdev=.dev && npm run term",
-    "pro": "PRODUCTION=true npm run build && espruino --port /dev/ttyUSB0 -b 115200 --no-ble --board ../boards/ESP32.json ./build/espruino.js",
-    "term": "espruino --port /dev/ttyUSB0 -b 115200 --no-ble --board ../boards/ESP32.json"
+    "pro": "PRODUCTION=true npm run build && espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./build/espruino.js",
+    "term": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json"
   },
   "author": "dkebler",
+  "contributors": [
+    {
+      "name": "Steve Anderson",
+      "email": "steve@twindx.com",
+      "url": "https://twindx.com"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.6",

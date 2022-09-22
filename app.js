@@ -1,37 +1,37 @@
-import {Wifi} from './lib/wifi.js'
-import { promisfyTest } from './lib/util.js'
+import { Wifi } from './lib/wifi.js';
+import { promisfyTest } from './lib/util.js';
 // import {extendedFeaturesTest} from './lib/extended-features.js'
 // import {server as wserver } from './lib/webserver.js'
 
-let times = 0
+let times = 0;
 
 class App {
   constructor(opts) {
-    console.log('environment', process.env)
-    this.opts = opts
-    this.wifi = new Wifi(opts.wifi)
+    console.log('environment', process.env);
+    this.opts = opts;
+    this.wifi = new Wifi(opts.wifi);
   }
 
-  init () {
-    this.wifi.on('connected', () =>{
-      this.online()
-    })
+  init() {
+    this.wifi.on('connected', () => {
+      this.online();
+    });
     this.wifi.on('disconnected', () => {
-      this.offline()
-    })
-    this.wifi.connect()  // get connection started
+      this.offline();
+    });
+    this.wifi.connect(); // get connection started
   }
 
-  async online () {
-    console.log('application online at', this.wifi.status.ip)
-    times++
+  async online() {
+    console.log('application online at', this.wifi.status.ip);
+    times++;
     if (times < 4) {
-      setTimeout(async ()=>{
-        console.log('---------------- manually disconnect/reconnect test --------------', times)
-        await this.wifi.disconnect()
+      setTimeout(async () => {
+        console.log('---------------- manually disconnect/reconnect test --------------', times);
+        await this.wifi.disconnect();
         // console.log('disconnected?',await this.wifi.disconnect())
-      },5000)
-    } else console.log('done disconnect trial of 3 times')
+      }, 5000);
+    } else console.log('done disconnect trial of 3 times');
     // await promisfyTest(true)
     // await promisfyTest()
     // await promisfyTest(true,true)
@@ -53,15 +53,12 @@ class App {
     // console.log('lookup ip', await this.wifi.nslookup('esptest') )
     // console.log('ping gateway', await this.wifi.ping(this.wifi.status.gw))
     // console.log('pinging google.com', await this.wifi.ping('google.com') )
-
   }
 
-
-  offline (){
-    console.log('application offline')
+  offline() {
+    console.log('application offline');
   }
-
 }
 
-export default App
-export { App }
+export default App;
+export { App };

@@ -1,2 +1,1 @@
-reset(1)  // reset ram
- 
+reset(1); // reset ram

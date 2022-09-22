@@ -1,16 +1,16 @@
 // rollup.config.js
-import json from '@rollup/plugin-json'
-import {terser} from 'rollup-plugin-terser'
-import bubleP from '@rollup/plugin-buble'
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import babelP from '@rollup/plugin-babel'
-import injectProcessEnv from 'rollup-plugin-inject-process-env'
-import yaml from '@rollup/plugin-yaml'
+import json from '@rollup/plugin-json';
+import { terser } from 'rollup-plugin-terser';
+import bubleP from '@rollup/plugin-buble';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babelP from '@rollup/plugin-babel';
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
+import yaml from '@rollup/plugin-yaml';
 
 const buble = bubleP({
   objectAssign: 'Object.assign',
-  transforms:{
+  transforms: {
     // modules: false // default is false since this is rollup plugin
     arrow: false,
     classes: false,
@@ -31,15 +31,13 @@ const buble = bubleP({
     templateString: false,
     unicodeRegExp: true
   }
-})
+});
 
 const babel = babelP({
   babelrc: false,
   babelHelpers: 'bundled',
-  plugins: [
-    'babel-plugin-transform-async-to-promises',
-  ]
-})
+  plugins: ['babel-plugin-transform-async-to-promises']
+});
 
 export default {
   input: './main.js',
@@ -52,7 +50,7 @@ export default {
     injectProcessEnv({
       PRODUCTION: !!process.env.PRODUCTION || !!process.env.PRO || false
     }),
-    buble,
+    buble
   ],
   output: [
     {
@@ -71,8 +69,8 @@ export default {
     {
       file: './build/esm.js',
       format: 'es',
-      interop: false,
+      interop: false
       // external: [ 'Wifi' ] // <-- suppresses the warning
-    },
-  ],
-}
+    }
+  ]
+};

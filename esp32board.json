@@ -1,0 +1,548 @@
+{
+  "info": {
+    "name": "ESP32",
+    "espruino_page_link": "ESP32",
+    "default_console": "EV_SERIAL1",
+    "default_console_baudrate": "115200",
+    "variables": 2500,
+    "binary_name": "espruino_%v_esp32.bin",
+    "build": {
+      "optimizeflags": "-Og",
+      "libraries": [
+        "ESP32",
+        "NET",
+        "GRAPHICS",
+        "CRYPTO",
+        "SHA256",
+        "SHA512",
+        "TLS",
+        "TELNET",
+        "NEOPIXEL",
+        "FILESYSTEM",
+        "FLASHFS",
+        "BLUETOOTH"
+      ],
+      "makefile": [
+        "DEFINES+=-DESP_PLATFORM -DESP32=1",
+        "DEFINES+=-DESP_STACK_SIZE=25000",
+        "DEFINES+=-DJSVAR_MALLOC",
+        "DEFINES+=-DUSE_FONT_6X8",
+        "ESP32_FLASH_MAX=1572864"
+      ]
+    },
+    "image_url": "http://www.espruino.com/img/ESP32.jpg",
+    "thumb_url": "http://www.espruino.com/img/ESP32_thumb.jpg",
+    "binary_version": "2v15",
+    "binary_url": "http://www.espruino.com/binaries/espruino_2v15_esp32.bin",
+    "builtin_modules": [
+      "Flash",
+      "Storage",
+      "heatshrink",
+      "fs",
+      "net",
+      "dgram",
+      "tls",
+      "http",
+      "NetworkJS",
+      "Wifi",
+      "TelnetServer",
+      "crypto",
+      "neopixel"
+    ]
+  },
+  "chip": {
+    "part": "ESP32",
+    "family": "ESP32",
+    "package": "",
+    "ram": 512,
+    "flash": 0,
+    "speed": 240,
+    "usart": 3,
+    "spi": 2,
+    "i2c": 2,
+    "adc": 2,
+    "dac": 0,
+    "saved_code": {
+      "address": 3276800,
+      "page_size": 4096,
+      "pages": 64,
+      "flash_available": 1344
+    }
+  },
+  "devices": {},
+  "pins": [
+    {
+      "name": "D0",
+      "port": "D",
+      "num": "0",
+      "sortingname": "D00",
+      "functions": {
+        "ADC2_IN1": 0,
+        "LED_1": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN1"]
+      }
+    },
+    {
+      "name": "D1",
+      "port": "D",
+      "num": "1",
+      "sortingname": "D01",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D2",
+      "port": "D",
+      "num": "2",
+      "sortingname": "D02",
+      "functions": {
+        "ADC2_IN2": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN2"]
+      }
+    },
+    {
+      "name": "D3",
+      "port": "D",
+      "num": "3",
+      "sortingname": "D03",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D4",
+      "port": "D",
+      "num": "4",
+      "sortingname": "D04",
+      "functions": {
+        "ADC2_IN0": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN0"]
+      }
+    },
+    {
+      "name": "D5",
+      "port": "D",
+      "num": "5",
+      "sortingname": "D05",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D6",
+      "port": "D",
+      "num": "6",
+      "sortingname": "D06",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D7",
+      "port": "D",
+      "num": "7",
+      "sortingname": "D07",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D8",
+      "port": "D",
+      "num": "8",
+      "sortingname": "D08",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D9",
+      "port": "D",
+      "num": "9",
+      "sortingname": "D09",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D10",
+      "port": "D",
+      "num": "10",
+      "sortingname": "D10",
+      "functions": {
+        "USART0_TX": 0
+      },
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D11",
+      "port": "D",
+      "num": "11",
+      "sortingname": "D11",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D12",
+      "port": "D",
+      "num": "12",
+      "sortingname": "D12",
+      "functions": {
+        "ADC2_IN5": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN5"]
+      }
+    },
+    {
+      "name": "D13",
+      "port": "D",
+      "num": "13",
+      "sortingname": "D13",
+      "functions": {
+        "ADC2_IN4": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN4"]
+      }
+    },
+    {
+      "name": "D14",
+      "port": "D",
+      "num": "14",
+      "sortingname": "D14",
+      "functions": {
+        "ADC2_IN6": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN6"]
+      }
+    },
+    {
+      "name": "D15",
+      "port": "D",
+      "num": "15",
+      "sortingname": "D15",
+      "functions": {
+        "ADC2_IN3": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN3"]
+      }
+    },
+    {
+      "name": "D16",
+      "port": "D",
+      "num": "16",
+      "sortingname": "D16",
+      "functions": {
+        "USART2_RX": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "USART": ["USART2_RX"]
+      }
+    },
+    {
+      "name": "D17",
+      "port": "D",
+      "num": "17",
+      "sortingname": "D17",
+      "functions": {
+        "USART2_TX": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "USART": ["USART2_TX"]
+      }
+    },
+    {
+      "name": "D18",
+      "port": "D",
+      "num": "18",
+      "sortingname": "D18",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D19",
+      "port": "D",
+      "num": "19",
+      "sortingname": "D19",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D20",
+      "port": "D",
+      "num": "20",
+      "sortingname": "D20",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D21",
+      "port": "D",
+      "num": "21",
+      "sortingname": "D21",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D22",
+      "port": "D",
+      "num": "22",
+      "sortingname": "D22",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D23",
+      "port": "D",
+      "num": "23",
+      "sortingname": "D23",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D24",
+      "port": "D",
+      "num": "24",
+      "sortingname": "D24",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D25",
+      "port": "D",
+      "num": "25",
+      "sortingname": "D25",
+      "functions": {
+        "DAC_OUT1": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "DAC": ["DAC_OUT1"]
+      }
+    },
+    {
+      "name": "D26",
+      "port": "D",
+      "num": "26",
+      "sortingname": "D26",
+      "functions": {
+        "DAC_OUT2": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "DAC": ["DAC_OUT2"]
+      }
+    },
+    {
+      "name": "D27",
+      "port": "D",
+      "num": "27",
+      "sortingname": "D27",
+      "functions": {
+        "ADC2_IN7": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC2_IN7"]
+      }
+    },
+    {
+      "name": "D28",
+      "port": "D",
+      "num": "28",
+      "sortingname": "D28",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D29",
+      "port": "D",
+      "num": "29",
+      "sortingname": "D29",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D30",
+      "port": "D",
+      "num": "30",
+      "sortingname": "D30",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D31",
+      "port": "D",
+      "num": "31",
+      "sortingname": "D31",
+      "functions": {},
+      "csv": {},
+      "simplefunctions": {}
+    },
+    {
+      "name": "D32",
+      "port": "D",
+      "num": "32",
+      "sortingname": "D32",
+      "functions": {
+        "ADC1_IN4": 0,
+        "USART0_RX": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN4"]
+      }
+    },
+    {
+      "name": "D33",
+      "port": "D",
+      "num": "33",
+      "sortingname": "D33",
+      "functions": {
+        "ADC1_IN5": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN5"]
+      }
+    },
+    {
+      "name": "D34",
+      "port": "D",
+      "num": "34",
+      "sortingname": "D34",
+      "functions": {
+        "ADC1_IN6": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN6"]
+      }
+    },
+    {
+      "name": "D35",
+      "port": "D",
+      "num": "35",
+      "sortingname": "D35",
+      "functions": {
+        "ADC1_IN7": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN7"]
+      }
+    },
+    {
+      "name": "D36",
+      "port": "D",
+      "num": "36",
+      "sortingname": "D36",
+      "functions": {
+        "ADC1_IN0": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN0"]
+      }
+    },
+    {
+      "name": "D37",
+      "port": "D",
+      "num": "37",
+      "sortingname": "D37",
+      "functions": {
+        "ADC1_IN1": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN1"]
+      }
+    },
+    {
+      "name": "D38",
+      "port": "D",
+      "num": "38",
+      "sortingname": "D38",
+      "functions": {
+        "ADC1_IN2": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN2"]
+      }
+    },
+    {
+      "name": "D39",
+      "port": "D",
+      "num": "39",
+      "sortingname": "D39",
+      "functions": {
+        "ADC1_IN3": 0
+      },
+      "csv": {},
+      "simplefunctions": {
+        "ADC": ["ADC1_IN3"]
+      }
+    }
+  ],
+  "peripherals": {
+    "ADC": {
+      "": [
+        "D0",
+        "D2",
+        "D4",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D27",
+        "D32",
+        "D33",
+        "D34",
+        "D35",
+        "D36",
+        "D37",
+        "D38",
+        "D39"
+      ]
+    },
+    "USART2": {
+      "RX": ["D16"],
+      "TX": ["D17"]
+    },
+    "DAC": {
+      "": ["D25", "D26"]
+    }
+  }
+}
