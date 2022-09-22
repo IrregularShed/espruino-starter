@@ -40,7 +40,7 @@ const babel = babelP({
 });
 
 export default {
-  input: './main.js',
+  input: './src/main.js',
   plugins: [
     resolve(),
     commonjs(),

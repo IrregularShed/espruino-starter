@@ -1,13 +1,12 @@
 {
-  "name": "esprunio-starter",
+  "name": "espruino-starter",
   "version": "1.0.0",
   "description": "starter repo to build and deploy modular and extended Espruino code",
   "main": "build/espruino.js",
-  "module": "app.js",
   "scripts": {
     "build": "node_modules/.bin/rollup -c",
-    "wipe": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./wipe.js",
-    "reset": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./reset.js",
+    "wipe": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./utils/wipe.js",
+    "reset": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./utils/reset.js",
     "upload": "espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./build/espruino.dev.js",
     "dev": "npm run build && npm run wipe && npm run upload --isdev=.dev && npm run term",
     "pro": "PRODUCTION=true npm run build && espruino --port COM23 -b 115200 --no-ble --board ./esp32board.json ./build/espruino.js",

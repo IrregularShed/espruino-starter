@@ -1,4 +1,4 @@
-import opts from './options.yaml';
+import opts from '../options.yaml';
 import { App } from './app.js';
 
 // called on boot if production
