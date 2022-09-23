@@ -1,6 +1,5 @@
 import wifi from 'Wifi';
 import ping from 'Ping';
-// import { isIP } from 'net'
 import { promisify, to, isIP } from './util.js';
 
 let reporter;
@@ -18,26 +17,16 @@ class Wifi {
 
     wifi.on('connected', () => {
       console.log('ESP connected to AP');
-      // this.pingMonitor = setInterval(()=>{
-      //   wifi.ping(this.status.gw,res=>{
-      //     if (res) console.log(res.timeout ? 'ping failed - gateway was unreachable' : `pinged gateway in ${res.respTime} ms`)
-      //     else console.log('ping issue no response in callback')
-      //   },2000)
-      // })
       this.state = 'connected';
       this.emit('connected', this.status);
-      // wifi.setHostname(_opts.hostname || 'esp32')
-      // this.log()
       if (this.opts.report) this.report(this.opts.report);
     });
 
     wifi.on('disconnected', () => {
-      // clearInterval(this.pingMonitor)
       console.log('ESP disconnected from AP');
       this.state = 'disconnected';
       this.emit('disconnected', this.status);
       this.reconnect();
-      // this.log()
       this.report();
     });
   } // end constructor
@@ -72,7 +61,6 @@ class Wifi {
   }
 
   reconnect() {
-    // console.log('reconnecting',!this._timed, !this.connected)
     if (this._reconnect && !this._timed && !this.connected) {
       this.state = 'reconnecting';
       console.log('attempting reconnect in', this._reconnect);
@@ -84,7 +72,6 @@ class Wifi {
 
   async disconnect() {
     return new Promise(resolve => {
-      // console.log('disconnecting, connected now?', this.connected)
       if (this.connected) {
         console.log('forcing disconnect now');
         let i = 0;
@@ -126,7 +113,6 @@ class Wifi {
       console.log('already connected to', this.status.ssid);
       wifi.emit('connected');
     } else {
-      // console.log('not connected...connecting',this.opts)
       console.log('not connected...connecting');
       this._timed = setTimeout(async () => {
         console.log(this.connected, 'timed out trying to connect');
@@ -167,7 +153,6 @@ class Wifi {
 
   async ping(name) {
     if (!name) return null;
-    // console.log('pinging', name, this._pingIP)
     let [err, res] = await to(isIP(name) ? this._pingIP(name) : this._pingHost({ address: name }));
     if (err) {
       console.log('ping error', err);
